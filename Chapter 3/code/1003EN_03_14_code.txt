@@ -1,0 +1,5 @@
+[Required(ErrorMessage = "Email ID is required")]
+[StringLength(35, ErrorMessage = "eMail Length should be less than 35")]
+[RegularExpression(@"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$", ErrorMessage = "E Mail is not in proper format")]
+[UniqueEmail]
+public string Email { get; set; }

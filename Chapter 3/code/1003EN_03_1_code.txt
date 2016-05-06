@@ -1,0 +1,10 @@
+partial class Contact
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+}
+
+partial class Contact
+{
+    public DateTime DateOfBirth { get; set; }
+}

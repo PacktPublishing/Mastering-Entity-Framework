@@ -1,0 +1,12 @@
+using(SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+    string query = @"Select VALUE Employee from SampleDatabaseEntities.Employees as Employee";
+
+    var adapter = (IObjectContextAdapter)db;
+    var objContext = adapter.ObjectContext;
+    objContext.Connection.Open();
+
+    ObjectQuery<Employee> objQuery = new ObjectQuery<Employee>(query, objContext);
+
+    List<Employee> employees = objQuery.ToList();
+}

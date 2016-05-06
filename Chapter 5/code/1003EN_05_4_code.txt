@@ -1,0 +1,12 @@
+Create PROCEDURE dbo.AddEmployee
+	@firstname nvarchar(200),
+	@lastname nvarchar(200),
+	@phonenumber nvarchar(20),
+	@email nvarchar(50),
+	@salary decimal(18, 0),
+	@employerId int
+
+AS
+	insert into Employee(FirstName,LastName,PhoneNumber, EMailId, Salary, EmployerId)
+	values (@firstname, @lastname, @phonenumber, @email, @salary, @employerId)
+RETURN

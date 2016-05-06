@@ -1,0 +1,7 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+	 double averageSalary = db.Employees
+			.Where(employee => employee.Employer_ID == 4)
+			.Select(employee => employee.Salary)
+			.Average();
+}

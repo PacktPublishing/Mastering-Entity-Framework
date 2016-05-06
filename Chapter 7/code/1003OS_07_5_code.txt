@@ -1,0 +1,8 @@
+public class SampleDbEntities : DbContext	
+{
+	public SampleDbEntities(DbConnection con)
+		:base(con, contextOwnsConnection: false)
+	{
+
+	}	
+}

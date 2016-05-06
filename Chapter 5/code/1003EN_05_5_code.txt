@@ -1,0 +1,4 @@
+Create PROCEDURE dbo.GetEmployees	
+AS
+	Select * from Employee
+RETURN

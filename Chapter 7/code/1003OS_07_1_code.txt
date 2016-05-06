@@ -1,0 +1,4 @@
+public class SampleDbEntities : DbContext
+{
+	// Code here
+}

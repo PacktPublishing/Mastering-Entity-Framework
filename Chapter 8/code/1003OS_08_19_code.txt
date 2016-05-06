@@ -1,0 +1,15 @@
+class EmployeeListWithEmployerName
+{
+    public string EmployerName { get; set; }
+    public ICollection<Employee> EmployeeList { get; set; }
+}
+
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+	IQueryable<EmployeeListWithEmployerName> employers = from employer in db.Employers
+                    select new EmployeeListWithEmployerName
+                    {
+                        EmployerName = employer.EmployerName,
+                        EmployeeList = employer.Employees
+                    };
+}

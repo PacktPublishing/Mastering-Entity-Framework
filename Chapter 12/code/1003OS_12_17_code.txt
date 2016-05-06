@@ -1,0 +1,16 @@
+public ActionResult Create(Category model)
+{
+    try
+    {
+        using (UnitOfWork uow = new UnitOfWork())
+        {
+            uow.CategoryRepository.Add(model);
+            uow.SaveChanges();
+        }
+        return RedirectToAction("Index");
+    }
+    catch
+    {
+        return View();
+    }
+}

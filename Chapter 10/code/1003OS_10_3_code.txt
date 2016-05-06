@@ -1,0 +1,9 @@
+public Employee GetUpdatedEmployee(int id, string employeeName, decimal? salaryValue)
+{
+    Employee employee = new Employee();
+    employee.Id = id;
+    employee.EmployeeName = employeeName;
+    employee.Salary = salaryValue;
+
+    return employee;
+}

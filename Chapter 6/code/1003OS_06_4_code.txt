@@ -1,0 +1,4 @@
+<connectionStrings>
+<add name="SampleDbEntities" connectionString="Data Source=(LocalDb)\v11.0;Initial Catalog=codeFirstSample;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\codeFirstSample.mdf" providerName="System.Data.SqlClient" />
+
+</connectionStrings>

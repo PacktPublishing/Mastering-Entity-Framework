@@ -1,0 +1,2 @@
+var descProvidor = new AssociatedMetadataTypeTypeDescriptionProvider(typeof(Person), typeof(PersonMetaData));
+TypeDescriptor.AddProviderTransparent(descProvidor, typeof(Person));

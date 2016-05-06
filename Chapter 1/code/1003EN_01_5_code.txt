@@ -1,0 +1,26 @@
+public ToDo GetTodoItem(int id)
+{
+    DataTable table = null;
+
+    using (SqlConnection connection = new SqlConnection(connectionString))
+    {
+        connection.Open();
+
+        SqlCommand cmd = connection.CreateCommand();
+
+        cmd.CommandType = CommandType.Text;
+        cmd.CommandText = "select * from TodoDb.dbo.ToDos where id = @id";
+
+        SqlParameter param = new SqlParameter("@Id", id);
+        cmd.Parameters.Add(param);
+
+        table = new DataTable();
+
+        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+        {
+            da.Fill(table);
+        }
+    }
+
+    return ConvertDataTableToTodo(table);
+}

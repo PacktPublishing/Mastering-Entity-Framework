@@ -1,0 +1,12 @@
+<Association Name="FK_Employees_Employers">
+	<End Role="Employers" Type="Self.Employers" Multiplicity="1" />
+	<End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+   	<ReferentialConstraint>
+   		<Principal Role="Employers">
+              <PropertyRef Name="ID" />
+          </Principal>
+          <Dependent Role="Employees">
+              <PropertyRef Name="EmployerId" />
+   		</Dependent>
+	</ReferentialConstraint>
+</Association>

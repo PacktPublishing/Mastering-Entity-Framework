@@ -1,0 +1,19 @@
+[HttpPost]
+public ActionResult Delete(int id, FormCollection collection)
+{
+    try
+    {
+        using (UnitOfWork uow = new UnitOfWork())
+        {
+            Category category = uow.CategoryRepository.Get(item => item.Id == id);
+            uow.CategoryRepository.Delete(category);
+            uow.SaveChanges();
+        }
+
+        return RedirectToAction("Index");
+    }
+    catch
+    {
+        return View();
+    }
+}

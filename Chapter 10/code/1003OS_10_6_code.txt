@@ -1,0 +1,13 @@
+// 1. User1 retieves the Employee data
+Employee employee1 = GetEmployee(1);
+
+// 2. User2 retieves the Employee data
+Employee employee2 = GetEmployee(1);
+
+// 3. User1 tries to update the salary only by creating a new Employee Model
+Employee newEmployeeData1 = GetUpdatedEmployee(employee2.Id, employee1.EmployeeName, 100);
+UpdateEmployeeEnhanced(employee1, newEmployeeData1);
+
+// 4. User2 tries to update the Name
+Employee newEmployeeData2 = GetUpdatedEmployee(employee2.Id, "New EmployeeName", employee2.Salary);            
+UpdateEmployeeEnhanced(employee1, newEmployeeData2);

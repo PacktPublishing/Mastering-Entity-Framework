@@ -1,0 +1,7 @@
+SELECT 
+    [Extent2].[ID] AS [ID], 
+    [Extent2].[EmployerName] AS [EmployerName]
+    FROM  [dbo].[Employees] AS [Extent1]
+    LEFT OUTER JOIN [dbo].[Employer] AS [Extent2] 
+	ON [Extent1].[Employer_ID] = [Extent2].[ID]
+    WHERE 5 = [Extent1].[ID]

@@ -1,0 +1,19 @@
+[HttpPost]
+public ActionResult DeleteComment(int id, FormCollection collection)
+{
+    try
+    {
+        using (UnitOfWork uow = new UnitOfWork())
+        {
+            Comment comment = uow.CommentRepository.Get(item => item.Id == id);
+            uow.CommentRepository.Delete(comment);
+            uow.SaveChanges();
+        }
+
+        return RedirectToAction("Index");
+    }
+    catch
+    {
+        return View();
+    }
+}

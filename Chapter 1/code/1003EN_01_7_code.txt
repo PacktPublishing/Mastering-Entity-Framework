@@ -1,0 +1,24 @@
+public bool UpdateItem(ToDo todoItem)
+{
+    int result = 0;
+    using (SqlConnection connection = new SqlConnection(connectionString))
+    {
+        connection.Open();
+
+        SqlCommand cmd = connection.CreateCommand();
+
+        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.CommandText = "sp_UpdateToDoItem";
+
+        SqlParameter idParam = new SqlParameter("@id", todoItem.TodoItem);
+        SqlParameter todoDoParam = new SqlParameter("@ToDo", todoItem.TodoItem);
+        SqlParameter isDoneParam = new SqlParameter("@isDone", todoItem.IsDone);
+
+	cmd.Parameters.Add(idParam);
+	cmd.Parameters.Add(isDoneParam);
+	cmd.Parameters.Add(todoDoParam);
+		
+       result = cmd.ExecuteNonQuery();
+    }
+    return result == 1;
+}

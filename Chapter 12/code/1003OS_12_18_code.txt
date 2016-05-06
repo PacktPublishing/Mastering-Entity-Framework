@@ -1,0 +1,9 @@
+public ActionResult Edit(int id)
+{
+    using (UnitOfWork uow = new UnitOfWork())
+    {
+        Category category = uow.CategoryRepository.Get(item => item.Id == id);
+
+        return View(category);
+    }
+}

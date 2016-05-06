@@ -1,0 +1,3 @@
+<connectionStrings>
+    <add name="AppConnection" connectionString="Data Source=(LocalDb)\v11.0;Initial Catalog=testDb;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\testDb.mdf" providerName="System.Data.SqlClient" />
+</connectionStrings>

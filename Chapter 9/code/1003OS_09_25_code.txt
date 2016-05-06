@@ -1,0 +1,30 @@
+using (EntityConnection con = new EntityConnection("name=SampleDatabaseEntities"))
+{
+    string query = @"Select VALUE Employee from SampleDatabaseEntities.Employees as Employee WHERE Employee.ID > @minValue AND Employee.ID < @maxValue";
+
+    EntityCommand cmd = con.CreateCommand();
+    cmd.CommandText = query;
+    cmd.CommandType = System.Data.CommandType.Text;
+
+	EntityParameter minValue = new EntityParameter {ParameterName = "minValue", Value = 100 };            
+	EntityParameter maxValue = new EntityParameter {ParameterName = "maxValue", Value = 500 };
+
+    cmd.Parameters.Add(minValue);
+    cmd.Parameters.Add(maxValue);
+
+    List<Employee> employees = new List<Employee>();
+
+    con.Open();
+    using (EntityDataReader reader = cmd.ExecuteReader(CommandBehavior.SequentialAccess))
+    {
+        while (reader.Read())
+        {
+            Employee employee = new Employee();
+            employee.ID = (int)reader["ID"];
+            employee.EmployeeName = reader["EmployeeName"] as string;
+            employee.Employer_ID = reader["Employer_ID"] as int?;
+
+            employees.Add(employee);
+        }
+    }
+}

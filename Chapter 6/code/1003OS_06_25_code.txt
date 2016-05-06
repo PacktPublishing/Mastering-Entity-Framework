@@ -1,0 +1,21 @@
+using (SampleDbEntities db = new SampleDbEntities())
+{
+    Report report1 = new Report();
+    report1.ReportName = "Test Report 1";
+    report1.ReportName = @"C:\Temp\Report1.rpt";
+
+    Report report2 = new Report();
+    report2.ReportName = "Test Report 2";
+    report2.ReportName = @"C:\Temp\Report2.rpt";
+
+    db.Reports.Add(report1);
+    db.Reports.Add(report2);
+
+
+    Employee employee = new Employee();
+    employee.EmployeeName = "Test Employee";
+    employee.Reports.Add(report2);
+                  
+    db.Employees.Add(employee);
+    db.SaveChanges();
+}

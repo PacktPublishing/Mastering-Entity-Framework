@@ -1,0 +1,7 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+	int sumOfSalaries = db.Employees
+                    .Where(employee => employee.Employer_ID == 4)
+                    .Select(employee => employee.Salary)
+                    .Sum();
+}

@@ -1,0 +1,1 @@
+string query = @"Select VALUE Employee from SampleDatabaseEntities.Employees as Employee ORDER BY Employee.ID DESC";

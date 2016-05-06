@@ -1,0 +1,4 @@
+public class SampleDbEntities : DbContext
+{
+    public virtual DbSet<Employer> Employers { get; set; }
+}

@@ -1,0 +1,8 @@
+<AssociationSetMapping Name="EmployeeReports" TypeName="todoDbModel.EmployeeReports" StoreEntitySet="EmployeeReports">
+	<EndProperty Name="Employees">
+		<ScalarProperty Name="ID" ColumnName="EmployeeID" />
+	</EndProperty>
+	<EndProperty Name="Reports">
+		<ScalarProperty Name="ID" ColumnName="ReportID" />
+	</EndProperty>
+</AssociationSetMapping>

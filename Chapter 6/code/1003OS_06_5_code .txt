@@ -1,0 +1,9 @@
+public class SampleDbEntities : DbContext
+{
+    public SampleDbEntities()
+        : base("name=SampleDbEntities")
+    {
+    }
+
+    public virtual DbSet<Employee> Employees { get; set; }
+}

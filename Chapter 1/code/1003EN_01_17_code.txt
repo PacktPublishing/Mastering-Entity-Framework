@@ -1,0 +1,6 @@
+using (ToDoDBEntities db = new ToDoDBEntities())
+{
+  ToDo todo1 = db.ToDos.Find(id);
+  ToDo todo3 = db.ToDos.FirstOrDefault(item => item.TodoItem == "Test item");
+  ToDo todo2 = db.ToDos.SingleOrDefault(item => item.TodoItem == "Test item");    
+}

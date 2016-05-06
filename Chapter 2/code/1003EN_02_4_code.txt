@@ -1,0 +1,18 @@
+public void UpdateEmployee(Employee modifiedEmployee, int employerId)
+{
+    using (SampleDbEntities db = new SampleDbEntities())
+    {
+        Employer employer = db.Employers.Find(employerId);
+        Employee employee = employer.Employees.FirstOrDefault(emp => emp.ID == newEmployee.ID);
+                
+        if (employee != null)
+        {
+            employee.EmployeeName = modifiedEmployee.EmployeeName;
+        }
+	    else
+	    {
+        	employer.Employees.Add(employee);
+	    }
+        db.SaveChanges();
+    }
+}

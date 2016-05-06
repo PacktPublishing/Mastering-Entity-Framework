@@ -1,0 +1,24 @@
+// Lets fetch the employee details for a given ID value
+public Employee GetEmployee(int id)
+{
+    Employee employee = null;
+
+    using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+    {   
+        employee = db.Employees.Find(id);
+    }
+
+    return employee;
+}
+
+// Update the Employee data in the database
+public void UpdateEmployee(Employee employee)
+{
+    using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+    {
+        ((IObjectContextAdapter)db).ObjectContext.CreateObjectSet<Employee>().Attach(employee);
+        ((IObjectContextAdapter)db).ObjectContext.ObjectStateManager.ChangeObjectState(employee, EntityState.Modified);
+
+        db.SaveChanges();
+    }
+}

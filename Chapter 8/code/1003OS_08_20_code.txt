@@ -1,0 +1,13 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+	IQueryable<EmployeeListWithEmployerName> employeeList =
+ 		db.Employers.Select
+              (
+                           employer =>
+                  new EmployeeListWithEmployerName
+                  {
+                       EmployerName = employer.EmployerName,
+                       EmployeeList = employer.Employees
+                  }
+              );
+}

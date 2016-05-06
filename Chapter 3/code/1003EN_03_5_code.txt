@@ -1,0 +1,9 @@
+partial class Person : IValidatableObject
+{
+    List<ValidationResult> validationErrors = new List<ValidationResult>();
+
+    public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+    {
+        return validationErrors;
+    }
+}

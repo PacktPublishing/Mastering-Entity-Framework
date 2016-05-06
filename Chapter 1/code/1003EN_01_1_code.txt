@@ -1,0 +1,1 @@
+<add name="todoConnectionString" connectionString="Data Source=(localdb)\Projects;Initial Catalog=ToDoDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" providerName="System.Data.SqlClient" />

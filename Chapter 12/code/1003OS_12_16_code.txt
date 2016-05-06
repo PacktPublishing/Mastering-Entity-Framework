@@ -1,0 +1,7 @@
+using(UnitOfWork uow = new UnitOfWork())
+{
+    List<Category> categories = uow.CategoryRepository
+					.GetAll()
+					.ToList();
+    return View(categories);
+}

@@ -1,0 +1,9 @@
+public partial class ToDoDBContext : DbContext
+{
+    public ToDoDBContext()
+        : base("name=ToDoConnectionString")
+    {
+    }
+    
+    public DbSet<ToDo> ToDoes { get; set; }
+}

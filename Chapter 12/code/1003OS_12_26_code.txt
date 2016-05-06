@@ -1,0 +1,25 @@
+public ActionResult Index(int page = 0)
+{
+    using (UnitOfWork uow = new UnitOfWork())
+    {
+        IEnumerable<Blog> blogs = uow.BlogRepository.GetAll();
+
+        blogs = blogs.OrderByDescending(blog => blog.UpdatedAt);
+
+        blogs = blogs.Skip(page * 10).Take(10);
+
+        IEnumerable<BlogSummaryViewModel> list = from blog in blogs
+        select new BlogSummaryViewModel
+        {
+            Id = blog.Id,
+            Title = blog.Title,
+            Summary = blog.Body.Length > 400 ? blog.Body.Substring(0, 400) : blog.Body,
+            AuthorName = blog.User.UserName,
+            CommentsCount = blog.Comments.Count(),
+            CreatedAt = blog.CreatedAt,
+            UpdatedAt = blog.UpdatedAt
+        };
+
+        return View(list.ToList());
+    }
+}

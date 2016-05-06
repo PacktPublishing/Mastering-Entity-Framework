@@ -1,0 +1,10 @@
+public class SampleDbEntities : DbContext
+{
+    public virtual DbSet<Person> People { get; set; }
+
+    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Employee>().ToTable("Employee");
+        modelBuilder.Entity<Vendor>().ToTable("Vendors");
+    }
+}

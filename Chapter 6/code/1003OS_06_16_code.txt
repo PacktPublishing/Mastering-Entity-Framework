@@ -1,0 +1,11 @@
+[Table("Employees")]
+public class Employee
+{
+    [Key]
+    public int ID { get; set; }
+
+    [Column("EmployeeName")]
+    public string EmployeeName { get; set; }
+
+    public virtual Passport Passport { get; set; }
+}

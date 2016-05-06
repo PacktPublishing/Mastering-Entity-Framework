@@ -1,0 +1,31 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+    string query = @"Select Employee.EmployeeName as EmployeeName, Employee.Employer as Employer from SampleDatabaseEntities.Employees as Employee";
+
+    var adapter = (IObjectContextAdapter)db;
+    var objContext = adapter.ObjectContext;
+    objContext.Connection.Open();
+
+    ObjectQuery<DbDataRecord> objQuery = new ObjectQuery<DbDataRecord>(query, objContext);
+
+    List<Result> result = new List<Result>();
+
+    foreach (DbDataRecord item in objQuery)
+    {
+        string employeeName = item[0] as string;
+        string employerName = string.Empty;
+
+        Employer employer = item[1] as Employer;
+
+        if (employer != null)
+        {
+            employerName = employer.EmployerName;
+        }
+
+        result.Add(new Result
+        {
+            EmployeeName = employeeName,
+            EmployerName = employerName
+        });
+    }
+}

@@ -1,0 +1,4 @@
+<Association Name="EmployeeReports">
+	<End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+	<End Role="Reports" Type="Self.Report" Multiplicity="*" />
+</Association>

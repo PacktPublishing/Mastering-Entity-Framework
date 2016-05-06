@@ -1,0 +1,6 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+	var employees = from employee in db.Employees
+                      orderby employee.ID
+                      select employee;
+}

@@ -1,0 +1,22 @@
+partial class Person : IValidatableObject
+{
+    List<ValidationResult> validationErrors = new List<ValidationResult>();
+
+    public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+    {
+        return validationErrors;
+    }
+
+    partial void OnEmailIDChanging(string value)
+    {
+		validationErrors.Clear();
+
+        bool isEmail = Regex.IsMatch(value, @"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$", RegexOptions.IgnoreCase);
+
+        if (isEmail == false)
+        {
+            ValidationResult vResult = new ValidationResult("Invalid email address", new string[] { "EmailID" });
+            validationErrors.Add(vResult);
+        }
+    }
+}

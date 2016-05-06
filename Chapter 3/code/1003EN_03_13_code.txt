@@ -1,0 +1,21 @@
+public class UniqueEmailAttribute : ValidationAttribute
+{
+    protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+    {
+        string email = value as string;
+
+        if (email != null)
+        {
+            using (SampleDbEntities db = new SampleDbEntities())
+            {
+                var personWithEmailFound = db.People.Any(item => item.Email == email);
+                if (personWithEmailFound == true)
+                {
+                    return new ValidationResult("This email already exists in the system.");
+                }
+            }
+        }
+
+        return ValidationResult.Success;
+    }
+}

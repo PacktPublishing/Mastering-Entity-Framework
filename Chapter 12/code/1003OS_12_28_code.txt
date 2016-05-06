@@ -1,0 +1,11 @@
+@foreach (Comment item in Model.Comments)
+{
+    <hr />
+    <p>
+        @item.Body
+        <br/>
+        <b>Posted by: </b> @item.User.UserName
+        
+    </p>
+    
+}

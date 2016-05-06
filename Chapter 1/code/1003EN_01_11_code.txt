@@ -1,0 +1,9 @@
+public partial class ToDoModelContainer : DbContext
+{
+	public ToDoModelContainer()
+		: base("name=ToDoModelContainer")
+	{
+	}
+
+	public virtual DbSet<ToDo> ToDoes { get; set; }
+}

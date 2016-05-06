@@ -1,0 +1,14 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+	var employersList = db.Employers.GroupJoin
+		(
+			db.Employees,
+			employer => (Int32?)(employer.ID),
+			employee => employee.Employer_ID,
+			(employer, employeeGroup) => new
+			{
+				EmployerName = employer.EmployerName,
+				EmployeesList = employeeGroup
+			}
+		);
+}

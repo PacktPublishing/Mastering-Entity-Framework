@@ -1,0 +1,23 @@
+public class SampleDbEntities : DbContext
+{
+    public virtual DbSet<Employee> Employees { get; set; }
+    public virtual DbSet<Passport> Passports { get; set; }
+		
+    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    {
+        // Line 1
+        modelBuilder.Entity<Passport>().HasKey(e => e.ID);
+
+        // Line 2
+        modelBuilder.Entity<Passport>()
+                    .Property(e => e.ID)
+                    .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+
+        // Line 3
+        modelBuilder.Entity<Passport>()
+                    .HasRequired(e => e.Employee)
+                    .WithRequiredDependent(s => s.Passport);
+
+        base.OnModelCreating(modelBuilder);
+    }
+}

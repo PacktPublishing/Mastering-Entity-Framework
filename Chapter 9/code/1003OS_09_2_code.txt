@@ -1,0 +1,1 @@
+EntityConnection eConnection = new EntityConnection("name=SampleDatabaseEntities");

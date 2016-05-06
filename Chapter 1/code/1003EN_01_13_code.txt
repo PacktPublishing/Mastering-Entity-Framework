@@ -1,0 +1,6 @@
+public class ToDo
+{
+    public int Id { get; set; }
+    public string ToDoItem { get; set; }
+    public bool IsDone { get; set; }
+}

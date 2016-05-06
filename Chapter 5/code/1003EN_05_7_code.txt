@@ -1,0 +1,22 @@
+Create PROCEDURE dbo.UpdateEmployee
+	@id int,
+	@firstname nvarchar(200),
+	@lastname nvarchar(200),
+	@phonenumber nvarchar(20),
+	@email nvarchar(50),
+	@salary decimal(18, 0),
+	@employerId int
+
+AS
+	update Employee
+	set
+		FirstName = @firstname,
+		LastName = @lastname,
+		PhoneNumber = @phonenumber, 
+		EMailId = @email, 
+		Salary = @salary,
+		EmployerId = @employerId
+	where
+	ID = @id
+
+RETURN

@@ -1,0 +1,18 @@
+[HttpPost]
+public ActionResult Edit(Category model)
+{
+    try
+    {
+        using (UnitOfWork uow = new UnitOfWork())
+        {
+            uow.CategoryRepository.Update(model);
+            uow.SaveChanges();
+        }
+
+        return RedirectToAction("Index");
+    }
+    catch
+    {
+        return View();
+    }
+}

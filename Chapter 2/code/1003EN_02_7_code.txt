@@ -1,0 +1,9 @@
+SELECT 
+	[Extent2].[ID] AS [ID], 
+	[Extent2].[EmployerName] AS [EmployerName]
+FROM 
+	[dbo].[Employees] AS [Extent1]
+INNER JOIN 
+	[dbo].[Employers] AS [Extent2] ON [Extent1].[EmployerId] = [Extent2].[ID]
+WHERE 
+	([Extent1].[ID] = @p__linq__0) AND (@p__linq__0 IS NOT NULL)

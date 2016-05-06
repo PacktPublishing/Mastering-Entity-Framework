@@ -1,0 +1,22 @@
+public bool DebitSalaryAccount(SqlConnection connection, SqlTransaction tx, int accountId, decimal amountToDebit)
+{
+    SqlCommand cmd = connection.CreateCommand();
+    cmd.Transaction = tx;
+    int result = 0;
+
+    cmd.CommandType = CommandType.Text;
+    cmd.CommandText = "Update SalaryAccount set Balance = Balance - @amountToDebit where id = @accountId";
+    cmd.Parameters.Add(new SqlParameter("@amountToDebit", amountToDebit));
+    cmd.Parameters.Add(new SqlParameter("@accountId", accountId));
+
+    try
+    {
+        result = cmd.ExecuteNonQuery();
+    }
+    catch 
+    {
+        throw;
+    }
+
+    return (result == 1);
+}

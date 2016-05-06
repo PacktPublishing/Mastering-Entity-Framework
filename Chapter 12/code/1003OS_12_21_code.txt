@@ -1,0 +1,22 @@
+[HttpPost]
+public ActionResult Create(Blog model)
+{
+    try
+    {
+        using (UnitOfWork uow = new UnitOfWork())
+        {
+            model.CategoryId = Convert.ToInt32(Request.Form["CategoryId"]);
+            model.CreatedAt = DateTime.Now;
+            model.UpdatedAt = DateTime.Now;
+            model.AuthorId = uow.UserRepository.Get(user => user.UserName == User.Identity.Name).Id;
+
+            uow.BlogRepository.Add(model);
+            uow.SaveChanges();
+        }
+        return RedirectToAction("Index");
+    }
+    catch
+    {        
+         return View();
+    }
+}

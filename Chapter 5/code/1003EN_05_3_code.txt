@@ -1,0 +1,4 @@
+using (SampleDbEntities db = new SampleDbEntities())
+{
+	IEnumerable<EmployeeView> employees = db.EmployeeViews.ToList();
+}

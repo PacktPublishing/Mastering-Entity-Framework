@@ -1,0 +1,11 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+	var result = from employee in db.Employees
+		group employee by employee.Employer_ID 
+		into employeeGroup
+		select new
+		{
+			EmployerID = employeeGroup.Key,
+			EmployeeEntity = employeeGroup
+		};
+}

@@ -1,0 +1,7 @@
+Person person = new Person();
+
+ValidationContext context = new ValidationContext(person);
+
+List<ValidationResult> results = new List<ValidationResult>();
+
+bool isValid = Validator.TryValidateObject(person, context, results);

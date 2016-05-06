@@ -1,0 +1,20 @@
+// This value is being created in one part of application
+ObjectParameter minValue = new ObjectParameter("minValue", 100);
+// This value is being created in another part of application
+ObjectParameter maxValue = new ObjectParameter("maxValue", 500);
+
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+    string query = @"Select VALUE Employee from SampleDatabaseEntities.Employees as Employee WHERE Employee.ID > @minValue AND Employee.ID < @maxValue";
+
+    var adapter = (IObjectContextAdapter)db;
+    var objContext = adapter.ObjectContext;
+    objContext.Connection.Open();
+
+    ObjectQuery<Employee> objQuery = new ObjectQuery<Employee>(query, objContext);
+                
+    objQuery.Parameters.Add(minValue);
+    objQuery.Parameters.Add(maxValue);
+
+    List<Employee> employees = objQuery.ToList();
+}

@@ -1,0 +1,4 @@
+public partial class SampleDbEntities : DbContext
+{   
+    public DbSet<Employee> Employees { get; set; }
+}

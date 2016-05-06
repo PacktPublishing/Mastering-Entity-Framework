@@ -1,0 +1,15 @@
+public partial class SampleDatabaseEntities : DbContext
+{
+    public SampleDatabaseEntities()
+        : base("name=SampleDatabaseEntities")
+    {
+    }
+    
+    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    {
+        throw new UnintentionalCodeFirstException();
+    }
+    
+    public DbSet<Employee> Employees { get; set; }
+    public DbSet<Employer> Employers { get; set; }
+}

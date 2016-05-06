@@ -1,0 +1,6 @@
+using(SampleDbEntities db = new SampleDbEntities())
+{
+    var employees = from employee in db.Employees
+                    where employee.ID > 100 && employee.ID < 500
+                    select employee;
+}

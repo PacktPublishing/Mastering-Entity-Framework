@@ -1,0 +1,9 @@
+[Table("Passports")]
+public class Passport
+{
+    [Key]
+    public int ID { get; set; }
+
+    [Column("PassportNumber")]
+    public string PassportNumber { get; set; }
+} 

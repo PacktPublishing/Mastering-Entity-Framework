@@ -1,0 +1,14 @@
+public void DeleteEmployee(int employeeId, int employerId)
+{
+    using (SampleDbEntities db = new SampleDbEntities())
+    {
+        Employer employer = db.Employers.Find(employerId);
+        Employee employee = employer.Employees.FirstOrDefault(emp => emp.ID == employeeId);
+
+        if(employee != null)
+        {
+            employer.Employees.Remove(employee);
+            db.SaveChanges();
+        }
+    }
+}

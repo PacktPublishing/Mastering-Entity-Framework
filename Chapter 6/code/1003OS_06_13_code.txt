@@ -1,0 +1,11 @@
+using (SampleDbEntities db = new SampleDbEntities())
+{
+    Employer employer = new Employer();
+    employer.EmployerName = "Test Employer";
+
+    Employee employee = new Employee();
+    employee.EmployeeName = "test Employee";
+             
+    db.Employees.Add(employee);
+    db.SaveChanges();
+}

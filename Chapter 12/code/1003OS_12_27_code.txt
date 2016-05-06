@@ -1,0 +1,9 @@
+public ActionResult Details(int id)
+{
+    using (UnitOfWork uow = new UnitOfWork())
+    {
+        Blog blog = uow.BlogRepository.Get(item => item.Id == id);
+                
+        return View(blog);
+    }
+}

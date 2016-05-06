@@ -1,0 +1,7 @@
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        MIN([Extent1].[Salary]) AS [A1]
+        FROM [dbo].[Employees] AS [Extent1]
+        WHERE 4 = [Extent1].[Employer_ID]
+    )  AS [GroupBy1]

@@ -1,0 +1,11 @@
+using (SampleDbEntities db = new SampleDbEntities())
+{
+    Employee employee = new Employee();
+    employee.FirstName = "test Employee";
+    employee.LastName = "test lastname";
+    employee.PhoneNumber = "1234567890";
+    employee.EMailId = "test@test.com";
+
+    db.Employees.Add(employee);
+    db.SaveChanges();
+}

@@ -1,0 +1,4 @@
+using(SampleDbEntities db = new SampleDbEntities())
+{
+    var employees = db.Employees;
+}

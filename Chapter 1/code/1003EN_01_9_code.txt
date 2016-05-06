@@ -1,0 +1,9 @@
+public partial class ToDoDBEntities : DbContext
+{
+    public ToDoDBEntities()
+        : base("name=ToDoDBEntities")
+    {
+    }
+    
+    public virtual DbSet<ToDo> ToDos { get; set; }
+}

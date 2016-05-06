@@ -1,0 +1,5 @@
+[Table("Vendors")]
+public class Vendor : Person
+{
+    public decimal HourlyRate { get; set; }
+}

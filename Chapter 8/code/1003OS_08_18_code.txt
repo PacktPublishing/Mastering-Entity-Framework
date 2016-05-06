@@ -1,0 +1,9 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+	var employers = from employer in db.Employers
+                    select new
+                    {
+                        EmployerName = employer.EmployerName,
+                        EmployeeList = employer.Employees
+                    };
+}

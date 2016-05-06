@@ -1,0 +1,22 @@
+public bool CreateItem(ToDo todoItem)
+{
+    int result = 0;
+    using (SqlConnection connection = new SqlConnection(connectionString))
+    {
+        connection.Open();
+
+        SqlCommand cmd = connection.CreateCommand();
+
+        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.CommandText = "sp_AddToDoItem";
+
+        SqlParameter todoDoParam = new SqlParameter("@ToDo", todoItem.TodoItem);
+        SqlParameter isDoneParam = new SqlParameter("@isDone", todoItem.IsDone);
+		
+	cmd.Parameters.Add(todoDoParam);
+	cmd.Parameters.Add(isDoneParam);
+        
+	result = cmd.ExecuteNonQuery();
+    }
+    return result == 1;
+}

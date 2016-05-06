@@ -1,0 +1,24 @@
+<Association Name="FK_EmployeeReports_Employees">
+	<End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+	<End Role="EmployeeReports" Type="Self.EmployeeReports" Multiplicity="*" />
+	<ReferentialConstraint>
+		<Principal Role="Employees">
+			<PropertyRef Name="ID" />
+		</Principal>
+		<Dependent Role="EmployeeReports">
+			<PropertyRef Name="EmployeeID" />
+		</Dependent>
+	</ReferentialConstraint>
+</Association>
+<Association Name="FK_EmployeeReports_Reports">
+	<End Role="Reports" Type="Self.Reports" Multiplicity="1" />
+	<End Role="EmployeeReports" Type="Self.EmployeeReports" Multiplicity="*" />
+	<ReferentialConstraint>
+		<Principal Role="Reports">
+			<PropertyRef Name="ID" />
+		</Principal>
+		<Dependent Role="EmployeeReports">
+			<PropertyRef Name="ReportID" />
+		</Dependent>
+	</ReferentialConstraint>
+</Association>

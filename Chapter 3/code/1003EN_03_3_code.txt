@@ -1,0 +1,12 @@
+partial class Contact
+{
+    public DateTime DateOfBirth { get; set; }
+
+    partial void OnLastNameChanging(string newValue)
+    {
+        if(newValue.Length > 50)
+        {
+            throw new Exception("LastName - length exceeded");
+        }
+    }
+}

@@ -1,0 +1,18 @@
+class PersonMetaData
+{
+    [Required(ErrorMessage = "First Name is required")]
+    [StringLength(100, ErrorMessage = "First Name length should be less than 100")]
+    public string FirstName { get; set; }
+
+    [Required(ErrorMessage = "Last Name is required")]
+    [StringLength(100, ErrorMessage = "Last Name length should be less than 100")]
+    public string LastName { get; set; }
+
+    [Required(ErrorMessage = "Phone number is required")]
+    [StringLength(15, ErrorMessage = "Phone number length should be less than 15")]
+    public string PhoneNumber { get; set; }
+
+    [Required(ErrorMessage = "Email ID is required")]
+    [StringLength(35, ErrorMessage = "eMail Length should be less than 35")]
+    public string Email { get; set; }
+}

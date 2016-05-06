@@ -1,0 +1,11 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+    var employees = db.Employees.Select
+    (
+        employee => new Result
+        {
+            EmployeeName = employee.EmployeeName,
+            EmployerName = employee.Employer.EmployerName
+        }
+    );
+}

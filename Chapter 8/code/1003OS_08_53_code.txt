@@ -1,0 +1,5 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+	List<Employee> employeeList = db.Employees
+			.Include("Employer").ToList();
+}

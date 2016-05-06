@@ -1,0 +1,23 @@
+// Update the Employee data in the database field level checks
+public void UpdateEmployeeEnhanced(Employee originalEmployeeData, Employee newEmployeeData)
+{
+    using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+    {
+        // Lets get the latest snapshot of data from the database
+        Employee employee = db.Employees.Find(originalEmployeeData.Id);
+
+        // Now one by check for the properties updated by the user
+        if (originalEmployeeData.EmployeeName != newEmployeeData.EmployeeName)
+        {
+            // Update the new value in the current database
+            employee.EmployeeName = newEmployeeData.EmployeeName;
+        }
+        if (originalEmployeeData.Salary != newEmployeeData.Salary)
+        {
+            // Update the value in the current database snapshot
+            employee.Salary = newEmployeeData.Salary;
+        }
+
+        db.SaveChanges();
+    }
+}

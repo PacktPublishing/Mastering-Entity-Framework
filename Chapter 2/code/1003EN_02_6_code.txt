@@ -1,0 +1,9 @@
+using (SampleDbEntities db = new SampleDbEntities())
+{
+    Employee employee = db.Employees.SingleOrDefault
+(employeeId);
+    if (employee != null)
+    {
+        employer = employee.Employer;
+    }
+}

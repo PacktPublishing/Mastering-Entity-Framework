@@ -1,0 +1,5 @@
+using (SampleDbEntities db = new SampleDbEntities())
+{
+    int id = 1;
+    ObjectResult<int?> employerIdResult = db.sp_GetEmployerIdByEmployee(id);
+}

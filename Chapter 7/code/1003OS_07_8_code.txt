@@ -1,0 +1,5 @@
+public class Employer
+{
+    public int ID { get; set; }
+    public string EmployerName { get; set; }
+}

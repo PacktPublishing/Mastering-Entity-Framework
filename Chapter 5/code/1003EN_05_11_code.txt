@@ -1,0 +1,7 @@
+Create FUNCTION dbo.GetEmployerIdForEmployee (@id int) RETURNS int
+AS	
+	BEGIN
+		DECLARE @result int;
+		select @result = EmployerId from Employee where ID = @id;
+		RETURN @result;
+	END

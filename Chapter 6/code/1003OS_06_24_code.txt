@@ -1,0 +1,17 @@
+public class SampleDbEntities : DbContext
+{
+    public virtual DbSet<Employee> Employees { get; set; }
+    public virtual DbSet<Report> Reports { get; set; }
+		
+    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Employee>().HasMany<Report>(employee => employee.Reports).WithMany(report => report.Employees).Map(c =>
+        {
+            c.MapLeftKey("EmployeeID");
+            c.MapRightKey("ReportID");
+            c.ToTable("EmployeeReports");
+        });
+
+        base.OnModelCreating(modelBuilder);
+    }
+}

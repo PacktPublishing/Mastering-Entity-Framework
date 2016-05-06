@@ -1,0 +1,9 @@
+public void AddEmployee(Employee employee, int employerId)
+{
+    using (SampleDbEntities db = new SampleDbEntities())
+    {
+        Employer employer = db.Employers.Find(employerId);
+        employer.Employees.Add(employee);
+        db.SaveChanges();
+    }
+}

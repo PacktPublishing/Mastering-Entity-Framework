@@ -1,0 +1,11 @@
+[Table("Employer")]
+public class Employer
+{
+    [Key]
+    public int ID { get; set; }
+
+    [Column("EmployerName")]
+    public string EmployerName { get; set; }
+
+    public virtual ICollection<Employee> Employees { get; set; }
+} 

@@ -1,0 +1,12 @@
+[Table("ToDo")] // Table name
+public class ToDo
+{
+	[Key] // Primary key
+    	public int Id { get; set; }
+
+	[Column(“ToDoItem", TypeName="ntext")] 
+    	public string ToDoItem { get; set; }
+
+	[Column(“IsDone", TypeName="bit")] 
+    	public bool IsDone { get; set; }
+}

@@ -1,0 +1,5 @@
+using(SampleDbEntities db = new SampleDbEntities())
+{
+    var employees = db.Employees
+	.Where(employee => employee.LastName == "Singh");
+}

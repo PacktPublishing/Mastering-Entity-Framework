@@ -1,0 +1,5 @@
+SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[EmployeeName] AS [EmployeeName], 
+    [Extent1].[Employer_ID] AS [Employer_ID]
+    FROM [dbo].[Employees] AS [Extent1]

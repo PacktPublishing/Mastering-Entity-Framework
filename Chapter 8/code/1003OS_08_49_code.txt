@@ -1,0 +1,7 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+	var employees = from employee in db.Employees
+               select employee;
+
+	List<Employee> employeeList = employees.ToList();
+}

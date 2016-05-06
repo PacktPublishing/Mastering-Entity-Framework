@@ -1,0 +1,8 @@
+public class MyCustomDropCreateDatabaseAlways 
+    : DropCreateDatabaseAlways<SampleDbEntities>
+{
+    protected override void Seed(SampleDbEntities context)
+    {
+
+    }
+}

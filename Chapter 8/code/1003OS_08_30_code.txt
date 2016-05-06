@@ -1,0 +1,6 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+	int numberEmployees = db.Employees
+			.Where(employee => employee.Employer_ID == 4)
+			.Count();
+}

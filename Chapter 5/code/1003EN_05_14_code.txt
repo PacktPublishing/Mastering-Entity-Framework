@@ -1,0 +1,5 @@
+using (SampleDbEntities db = new SampleDbEntities())
+{
+    int id = 1;
+    IQueryable<GetEmployeeFromEmployerID_Result> employerIdResult = db.GetEmployeeFromEmployerID(id);
+}

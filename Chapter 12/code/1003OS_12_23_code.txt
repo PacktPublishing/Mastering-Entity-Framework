@@ -1,0 +1,20 @@
+[HttpPost]
+public ActionResult Edit(Blog model)
+{
+    try
+    {
+        using (UnitOfWork uow = new UnitOfWork())
+        {
+            model.CategoryId = Convert.ToInt32(Request.Form["CategoryId"]);
+            model.UpdatedAt = DateTime.Now;
+
+            uow.BlogRepository.Update(model);
+            uow.SaveChanges();
+        }
+        return RedirectToAction("Index");
+    }
+    catch
+    {
+        return View();
+    }
+}

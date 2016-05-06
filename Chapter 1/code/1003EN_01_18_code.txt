@@ -1,0 +1,8 @@
+using (ToDoDBEntities db = new ToDoDBEntities())
+{
+    ToDo todoItem = new ToDo();
+    todoItem.TodoItem = "This is a test item.";
+    todoItem.IsDone = false;
+    db.ToDos.Add(todoItem);
+    db.SaveChanges();
+}

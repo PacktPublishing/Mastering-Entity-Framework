@@ -1,0 +1,20 @@
+using (SampleDbEntities db = new SampleDbEntities())
+{
+    Employee employee = new Employee();
+    employee.FirstName = "Employee 1";
+    employee.LastName = "Employee 1";
+    employee.PhoneNumber = "1234567";
+    employee.Salary = 50000;
+    employee.EmailID = "employee1@test.com";
+
+    Vendor vendor = new Vendor();
+    vendor.FirstName = "vendor 1";
+    vendor.LastName = "vendor 1";
+    vendor.PhoneNumber = "1234567";
+    vendor.HourlyRate = 100;
+    vendor.EmailID = "vendor1@test.com";
+
+    db.People.Add(employee);
+    db.People.Add(vendor);
+    db.SaveChanges();
+}

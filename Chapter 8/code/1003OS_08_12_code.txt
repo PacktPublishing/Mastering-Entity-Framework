@@ -1,0 +1,6 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+	var employer = db.Employees
+			.Where(employee => employee.ID == 5)
+			.Select(employee => employee.Employer);
+}

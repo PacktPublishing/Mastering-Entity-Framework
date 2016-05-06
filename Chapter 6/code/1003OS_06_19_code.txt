@@ -1,0 +1,12 @@
+using (SampleDbEntities db = new SampleDbEntities())
+{
+    Passport passport = new Passport();
+    passport.PassportNumber = "Test123";
+
+    Employee employee = new Employee();
+    employee.EmployeeName = "test Employee";
+    employee.Passport = passport;
+                  
+    db.Employees.Add(employee);
+    db.SaveChanges();
+}

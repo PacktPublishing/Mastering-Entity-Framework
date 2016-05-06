@@ -1,0 +1,15 @@
+using(SampleDbEntities db = new SampleDbEntities())
+{
+	from employee in db.Employees
+	where employee.ID > 100 && employee.ID < 500
+	|| employee.ID == 1
+	|| employee.Employer_ID == 5
+	select employee;
+}
+
+SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[EmployeeName] AS [EmployeeName], 
+    [Extent1].[Employer_ID] AS [Employer_ID]
+    FROM [dbo].[Employees] AS [Extent1]
+    WHERE (([Extent1].[ID] > 100) AND ([Extent1].[ID] < 500)) OR (1 = [Extent1].[ID]) OR (5 = [Extent1].[Employer_ID])

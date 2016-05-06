@@ -1,0 +1,6 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+    var employees = from employer in db.Employers
+                    where employer.ID == 4
+                    select employer.Employees;
+}

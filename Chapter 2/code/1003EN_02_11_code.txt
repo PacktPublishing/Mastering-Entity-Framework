@@ -1,0 +1,12 @@
+<Association Name="FK_Employees_Passports">
+	<End Type="todoDbModel.Passport" Role="Passport" Multiplicity="1" />
+	<End Type="todoDbModel.Employee" Role="Employee" Multiplicity="0..1" />
+	<ReferentialConstraint>
+		<Principal Role="Passport">
+			<PropertyRef Name="ID" />
+		</Principal>
+		<Dependent Role="Employee">
+			<PropertyRef Name="ID" />
+		</Dependent>
+	</ReferentialConstraint>
+</Association>

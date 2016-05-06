@@ -1,0 +1,6 @@
+Create PROCEDURE dbo.GetEmployeeById
+	@id int
+AS
+	Select * from Employee
+	where ID = @id
+RETURN

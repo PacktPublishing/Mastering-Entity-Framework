@@ -1,0 +1,20 @@
+CREATE VIEW EmployeeView
+AS
+
+SELECT        
+	dbo.Employee.FirstName, 
+	dbo.Employee.ID, 
+	dbo.Employee.LastName, 
+	dbo.Employee.PhoneNumber, 
+	dbo.Employee.Salary, 
+	dbo.Employee.EMailId,                        
+	dbo.Employee.EmployerId, 
+	dbo.Employers.EmployerName
+FROM 
+	dbo.Employee 
+LEFT OUTER JOIN
+    dbo.Employers 
+ON 
+	dbo.Employee.EmployerId = dbo.Employers.ID
+	
+GO

@@ -1,0 +1,7 @@
+using (ToDoDBEntities db = new ToDoDBEntities())
+{
+    int id = 3;
+	 ToDo todo = db.ToDos.Find(id);
+    db.ToDos.Remove(todo);
+    db.SaveChanges();
+}

@@ -1,0 +1,7 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+	int maximumSalary = db.Employees
+		.Where(employee => employee.Employer_ID == 4)
+		.Select(employee => employee.Salary)
+		.Max();
+}

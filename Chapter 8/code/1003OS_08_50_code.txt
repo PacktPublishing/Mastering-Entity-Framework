@@ -1,0 +1,10 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+	var employees = from employee in db.Employees
+               select employee;
+
+	List<Employee> employeeList = employees.ToList();
+	
+	// Here the Employer data will be fetched from the database
+	Employer employer = employeeList.ElementAt(0).Employer;
+}

@@ -1,0 +1,11 @@
+[Table("Reports")]
+public class Report
+{
+    [Key]
+    public int ID { get; set; }
+
+    [Column("ReportName")]
+    public string ReportName { get; set; }
+
+    public virtual Employee ReportFilePath { get; set; }
+} 

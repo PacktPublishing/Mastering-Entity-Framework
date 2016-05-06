@@ -1,0 +1,33 @@
+decimal amountToTransfer = 1000;
+int accountId = 1;
+
+using (SqlConnection connection = new SqlConnection(connectionString))
+{
+    connection.Open();
+    using (SqlTransaction tx = connection.BeginTransaction())
+    {
+        try
+        {
+            bool result = DebitSalaryAccount(connection, tx, accountId, amountToTransfer);
+
+            if (result == false)
+            {
+                throw new Exception("Unable to debit from account");
+            }
+            using (SampleDatabaseEntities db = new SampleDatabaseEntities(connection, contextOwnsConnection: false))
+            {
+                db.Database.UseTransaction(tx);
+
+                SavingAccount savingAccount = db.SavingAccounts.Find(accountId);
+                savingAccount.Balance += amountToTransfer;
+                db.SaveChanges();
+            }
+
+            tx.Commit();
+        }
+        catch
+        {
+            tx.Rollback();
+        }
+    }
+}

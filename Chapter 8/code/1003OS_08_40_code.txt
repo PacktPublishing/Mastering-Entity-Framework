@@ -1,0 +1,6 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+	var employees = db.Employees
+		.OrderBy(employee => employee.ID)
+		.Skip(10);
+}

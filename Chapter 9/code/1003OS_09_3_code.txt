@@ -1,0 +1,9 @@
+using(EntityConnection eConnection = new EntityConnection("name=SampleDatabaseEntities"))
+{
+    eConnection.Open();
+
+    if(eConnection.State == System.Data.ConnectionState.Open)
+    {
+        // Connection is open
+    }
+}

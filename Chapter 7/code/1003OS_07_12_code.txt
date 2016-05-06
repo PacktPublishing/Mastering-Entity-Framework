@@ -1,0 +1,21 @@
+public class MyCustomDropCreateDatabaseAlways 
+    : DropCreateDatabaseAlways<SampleDbEntities>
+{
+    protected override void Seed(SampleDbEntities context)
+    {
+        Employer employer1 = new Employer();
+        employer1.EmployerName = "Employer1";
+
+        Employer employer2 = new Employer();
+        employer2.EmployerName = "Employer2";
+            
+        Employer employer3 = new Employer();
+        employer3.EmployerName = "Employer3";
+
+        context.Employers.Add(employer1);
+        context.Employers.Add(employer2);
+        context.Employers.Add(employer3);
+
+		base.Seed(context);
+    }
+}

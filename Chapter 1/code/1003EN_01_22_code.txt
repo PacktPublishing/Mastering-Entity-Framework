@@ -1,0 +1,15 @@
+<edmx:ConceptualModels>
+  <Schema Namespace="ToDoDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+	<EntityType Name="ToDo">
+	  <Key>
+		<PropertyRef Name="Id" />
+	  </Key>
+	  <Property Name="Id" Type="Int32" Nullable="false" />
+	  <Property Name="TodoItem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+	  <Property Name="IsDone" Type="Boolean" Nullable="false" />
+	</EntityType>
+	<EntityContainer Name="ToDoDBEntities" annotation:LazyLoadingEnabled="true">
+	  <EntitySet Name="ToDos" EntityType="Self.ToDo" />
+	</EntityContainer>
+  </Schema>
+</edmx:ConceptualModels>

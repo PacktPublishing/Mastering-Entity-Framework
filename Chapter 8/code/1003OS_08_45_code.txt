@@ -1,0 +1,13 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+	var employersList = from employer in db.Employers
+        join
+        employee in db.Employees
+        on
+        employer.ID equals employee.Employer_ID into employeeGroup
+        select new
+        {
+            EmployerName = employer.EmployerName,
+            EmployeesList = employeeGroup
+        };
+}

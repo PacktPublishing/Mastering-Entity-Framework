@@ -1,0 +1,7 @@
+[MetadataType(typeof(PersonMetaData))]
+partial class Person 
+{        
+}
+class PersonMetaData
+{
+}

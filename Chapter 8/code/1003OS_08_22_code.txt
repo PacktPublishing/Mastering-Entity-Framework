@@ -1,0 +1,14 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+	var result = db.Employees.GroupBy
+			(employee => employee.Employer_ID)
+			.Select
+			(
+				employeeGroup =>
+				new
+				{
+					EmployerID = employeeGroup.Key,
+					EmployeeEntity = employeeGroup
+				}
+			);
+}

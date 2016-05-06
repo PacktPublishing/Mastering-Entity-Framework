@@ -1,0 +1,5 @@
+Create PROCEDURE dbo.sp_GetEmployerIdByEmployee
+	@id int
+AS
+	select dbo.GetEmployerIdForEmployee(@id);
+	RETURN

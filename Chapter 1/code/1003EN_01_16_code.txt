@@ -1,0 +1,4 @@
+using(ToDoDBEntities db = new ToDoDBEntities())
+{
+    IEnumerable<ToDo> todoItems = db.ToDos;
+}

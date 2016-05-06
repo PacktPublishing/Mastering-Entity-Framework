@@ -1,0 +1,14 @@
+public Employer GetEmployerByEmployee(int employeeId)
+{
+    Employer employer = null;
+    using (SampleDbEntities db = new SampleDbEntities())
+    {
+        Employee employee = db.Employees.Find(employeeId);
+        if (employee != null)
+        {
+            employer = employee.Employer;
+        }
+    }
+
+    return employer;
+}

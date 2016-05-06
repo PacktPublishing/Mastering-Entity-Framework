@@ -1,0 +1,5 @@
+using (SampleDatabaseEntities db = new SampleDatabaseEntities())
+{
+	var employees = db.Employees
+                     .OrderByDescending(employee => employee.ID);
+}

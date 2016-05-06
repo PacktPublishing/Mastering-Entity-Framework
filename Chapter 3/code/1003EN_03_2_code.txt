@@ -1,0 +1,20 @@
+partial class Contact
+{
+    public string FirstName { get; set; }
+
+    private string m_LastName;
+    public string LastName 
+    {
+        get
+        {
+            return m_LastName;
+        }
+        set
+        {
+            OnLastNameChanging(value);
+            m_LastName = value;
+        }
+    }
+
+    partial void OnLastNameChanging(string newValue);
+}

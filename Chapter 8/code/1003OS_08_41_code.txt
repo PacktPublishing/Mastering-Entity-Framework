@@ -1,0 +1,15 @@
+SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[EmployeeName] AS [EmployeeName], 
+    [Extent1].[Employer_ID] AS [Employer_ID]
+    FROM 
+	( 
+		SELECT 
+			[Extent1].[ID] AS [ID], 
+			[Extent1].[EmployeeName] AS [EmployeeName], 
+			[Extent1].[Employer_ID] AS [Employer_ID], 
+			row_number() OVER (ORDER BY [Extent1].[ID] ASC) AS [row_number]
+        FROM [dbo].[Employees] AS [Extent1]
+    )  AS [Extent1]
+    WHERE [Extent1].[row_number] > 10
+    ORDER BY [Extent1].[ID] ASC

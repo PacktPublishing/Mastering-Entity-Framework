@@ -1,0 +1,6 @@
+SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[EmployeeName] AS [EmployeeName], 
+    [Extent1].[Employer_ID] AS [Employer_ID]
+    FROM [dbo].[Employees] AS [Extent1]
+    WHERE ([Extent1].[ID] > 100) AND ([Extent1].[ID] < 500)

@@ -1,0 +1,5 @@
+using (ToDoDBEntities db = new ToDoDBEntities())
+{
+	db.Entry(todo).State = EntityState.Modified;
+	db.SaveChanges();
+}

@@ -1,0 +1,5 @@
+Create PROCEDURE dbo.DeleteEmployee
+	@id int
+AS
+	delete from Employee where ID=id
+RETURN

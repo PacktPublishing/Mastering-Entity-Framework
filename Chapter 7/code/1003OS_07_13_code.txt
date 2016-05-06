@@ -1,0 +1,9 @@
+public class SampleDbEntities : DbContext
+{
+    public virtual DbSet<Employer> Employers { get; set; }
+
+    public SampleDbEntities()
+    {
+        Database.SetInitializer<SampleDbEntities>(new MyCustomDropCreateDatabaseAlways());
+    }
+}

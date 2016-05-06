@@ -1,0 +1,12 @@
+<Association Name="FK_Employees_Passports">
+	<End Role="Passports" Type="Self.Passports" Multiplicity="1" />
+	<End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+	<ReferentialConstraint>
+		<Principal Role="Passports">
+			<PropertyRef Name="ID" />
+		</Principal>
+		<Dependent Role="Employees">
+			<PropertyRef Name="ID" />
+		</Dependent>
+	</ReferentialConstraint>
+</Association>

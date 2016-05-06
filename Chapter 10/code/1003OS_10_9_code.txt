@@ -1,0 +1,13 @@
+// 1. User1 retieves the Employee data
+Employee employee1 = GetEmployee(1);
+
+// 2. User2 retieves the Employee data
+Employee employee2 = GetEmployee(1);
+
+// 3. User1 tries to update the salary only
+employee1.Salary = 100;
+UpdateEmployee(employee1);
+
+// 4. User2 tries to update the Name
+employee2.EmployeeName = "New EmployeeName";
+UpdateEmployee(employee2);

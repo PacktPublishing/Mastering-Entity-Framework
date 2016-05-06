@@ -1,0 +1,25 @@
+<EntityContainerMapping StorageEntityContainer="todoDbModelStoreContainer" CdmEntityContainer="SampleDbEntities">
+    <EntitySetMapping Name="Workers">
+    <EntityTypeMapping TypeName="IsTypeOf(SampleDbModel.Vendor)">
+        <MappingFragment StoreEntitySet="Vendor">
+        <ScalarProperty Name="HourlyRate" ColumnName="HourlyRate" />
+        <ScalarProperty Name="EMailId" ColumnName="EMailId" />
+        <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+        <ScalarProperty Name="LastName" ColumnName="LastName" />
+        <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+        <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+    </EntityTypeMapping>
+            
+    <EntityTypeMapping TypeName="IsTypeOf(SampleDbModel.Employee)">
+        <MappingFragment StoreEntitySet="Employee">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+        <ScalarProperty Name="Salary" ColumnName="Salary" />
+        <ScalarProperty Name="EMailId" ColumnName="EMailId" />
+        <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+        <ScalarProperty Name="LastName" ColumnName="LastName" />
+        <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+        </MappingFragment>
+    </EntityTypeMapping>
+    </EntitySetMapping>
+</EntityContainerMapping>
