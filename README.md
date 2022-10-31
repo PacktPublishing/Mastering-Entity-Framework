@@ -25,7 +25,3 @@ Each Chapter contains lots of code. You will see code something similler to the 
 * [Entity Framework Tutorial](https://www.packtpub.com/application-development/entity-framework-tutorial?utm_source=github&utm_medium=repository&utm_campaign=9781847195227)
 * [Entity Framework 4.1: Expert’s Cookbook](https://www.packtpub.com/application-development/entity-framework-41-expert%E2%80%99s-cookbook?utm_source=github&utm_medium=repository&utm_campaign=9781849684460)
 * [WCF Multi-layer Services Development with Entity Framework - Fourth Edition](https://www.packtpub.com/application-development/wcf-multi-layer-services-development-entity-framework-4th-edition?utm_source=github&utm_medium=repository&utm_campaign=9781784391041)
-### Download a free PDF
-
- <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
-<p align="center"> <a href="https://packt.link/free-ebook/9781784391003">https://packt.link/free-ebook/9781784391003 </a> </p>
